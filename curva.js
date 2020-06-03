@@ -1,7 +1,6 @@
 // Definir constantes
 let Kw = 1.00e-14
 
-
 // Selecionar Sliders
 let ConcTitulante = document.getElementById('ConcTitulante')
 let ConcTitulado = document.getElementById('ConcTitulado')
@@ -9,14 +8,12 @@ let ConcTitulado = document.getElementById('ConcTitulado')
 let VolTitulante = document.getElementById('VolTitulante')
 let VolTitulado = document.getElementById('VolTitulado')
 
-
 // Selecionar os Spans com os Value dos Sliders
 let ConcTitulanteResp = document.getElementById('ConcTitulanteValue')
 let ConcTituladoResp = document.getElementById('ConcTituladoValue')
 
 let VolTitulanteResp = document.getElementById('VolTitulanteValue')
 let VolTituladoResp = document.getElementById('VolTituladoValue')
-
 
 // Selecionar a div onde vai parar a curva
 let divCurva = document.getElementById('curva-pH')
@@ -27,16 +24,16 @@ let divCurva = document.getElementById('curva-pH')
 ConcTitulante.oninput = function atualizarConcTitulante() {
     let ConcTitulanteValue = ConcTitulante.value / 100
 
-    ConcTitulanteResp.innerHTML = `${ConcTitulanteValue.toFixed(2)}`
+    ConcTitulanteResp.innerHTML = `${ConcTitulanteValue.toFixed(3)}`
 
     let canvasCurva = document.getElementById('canvasCurva')
     divCurva.removeChild(canvasCurva)
     curva()
 }
 ConcTitulado.oninput = function atualizarConcTitulado() {
-    let ConcTituladoValue = ConcTitulado.value / 100
+    let ConcTituladoValue = ConcTitulado.value / 500
 
-    ConcTituladoResp.innerHTML = `${ConcTituladoValue.toFixed(2)}`
+    ConcTituladoResp.innerHTML = `${ConcTituladoValue.toFixed(3)}`
 
     let canvasCurva = document.getElementById('canvasCurva')
     divCurva.removeChild(canvasCurva)
@@ -68,8 +65,8 @@ function pontos() {
     let nTitulado = 0
 
     let CTitulante = ConcTitulante.value / 100
-    let CTitulado = ConcTitulado.value / 100
-    
+    let CTitulado = ConcTitulado.value / 500
+
     let nH3O = 0
     let nHO = 0
 
@@ -125,7 +122,7 @@ function pontos() {
         xVolumes.push(volumeTitulante.toFixed(2))
         ypH.push(pH.toFixed(2))
 
-        if (volumeTitulante >= volumeTitulado) {
+        if (pH < 2 && volumeTitulante >= volumeTitulado) {
             break
         } else {
             volumeTotal += volumeAdicional
