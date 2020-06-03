@@ -158,6 +158,26 @@ function curva() {
                     fill: false
                 }
             ]
+        },
+        options: {
+            scales: {
+                xAxes: [
+                    {
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Volume Adicionado/ ml'
+                        }
+                    }
+                ],
+                yAxes: [
+                    {
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'pH da Solução na Matraz'
+                        }
+                    }
+                ]
+            }
         }
     })
 }

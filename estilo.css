@@ -29,6 +29,20 @@ div.graf {
 }
 
 
+a {
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+a.footer {
+    font-weight: bold;
+    font-size: 15pt;
+}
+
+
 table {
     padding: 0px;
 }
@@ -82,4 +96,5 @@ ul.navbar li a:hover {
 
 footer {
     text-align: center;
+    margin: 20px;
 }
