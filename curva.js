@@ -104,9 +104,9 @@ function pontos() {
         CH3O = nH3O / volumeTotal
         CHO = nHO / volumeTotal
 
-        if (CH3O < 10e-10 && CH3O > 0) {
+        if (CH3O < Math.sqrt(Kw) && CH3O > 0) {
             CH3O = Math.sqrt(Kw)
-        } else if (CHO < 10e-10 && CHO > 0) {
+        } else if (CHO < Math.sqrt(Kw) && CHO > 0) {
             CHO = Math.sqrt(Kw)
         }
 
@@ -114,7 +114,7 @@ function pontos() {
             pH = -Math.log10(CH3O)
         } else if (CHO != 0) {
             pOH = -Math.log10(CHO)
-            pH = 14 - pOH
+            pH = -Math.log10(Kw) - pOH
         } else {
             pH = 7
         }
@@ -158,6 +158,26 @@ function curva() {
                     fill: false
                 }
             ]
+        },
+        options: {
+            scales: {
+                xAxes: [
+                    {
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Volume Adicionado/ ml'
+                        }
+                    }
+                ],
+                yAxes: [
+                    {
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'pH da Solução na Matraz'
+                        }
+                    }
+                ]
+            }
         }
     })
 }
