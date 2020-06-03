@@ -1,0 +1,80 @@
+body {
+    background: rgba(51, 139, 240, 0.3);
+    font: normal 14pt Calibri;
+}
+
+header {
+    text-align: center;
+    padding-top: 5px;
+}
+
+main {
+    background: white;
+    border-radius: 10px;
+    margin: auto;
+    padding: 15px;
+    width: 75vw;
+    max-width: 1000px;
+}
+
+
+div {
+    text-align: center;
+    padding: 5px;
+}
+
+
+table {
+    padding: 0px;
+}
+table.centered {
+    margin: auto;
+    width: fit-content;
+}
+table.centered tr td.slider-label {
+    text-align: right;
+}
+td p {
+    height: 10px;
+    margin: 0px;
+}
+
+
+input.slider {
+    margin-top: 10px;
+    height: 100%;
+    width: 30vw;
+    opacity: 70%;
+}
+input.slider:hover{
+    opacity: 100%;
+}
+
+
+ul.navbar {
+    list-style-type: none;
+    margin: 10px 5px 20px 5px;
+    padding: 0px;
+    overflow: hidden;
+    background-color: rgba(128, 128, 128, 0.4);
+    border-radius: 5px;
+}
+ul.navbar li {
+    float: left;
+}
+ul.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 14px 16px;
+    transition: background-color 0.2s;
+}
+ul.navbar li a:hover {
+    background-color: rgba(128, 128, 128, 0.8);
+}
+
+
+footer {
+    text-align: center;
+}
