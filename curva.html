@@ -9,15 +9,16 @@
 </head>
 <body>
     <main>
-        <head>
+        <header>
             Curva de pH
-        </head>
+        </header>
         <section>
             <div>
-
+                <p>Vamos determinar uma curva de pH, resultante de uma titulação.</p>
             </div>
             <div>
-
+                <p>A experiência será realizada a 25°C.</p>
+                <p>O Titulante será uma solução Ácida e o Titulado uma solução Básica.</p>
             </div>
         </section><br>
 
@@ -25,14 +26,25 @@
             <div>
                 <table class="centered">
                     <tr>
+                        <td class="slider-label"><label for="ConcTitulante">Concentração do Titulante:</label></td>
+                        <td><input type="range" name="ConcTitulante" id="ConcTitulante" class="slider" min="10" max="50" value="10"></td>
+                        <td><span id="ConcTitulanteValue">0.10</span>mol/l</td>
+                    </tr>
+                    <tr>
+                        <td class="slider-label"><label for="ConcTitulado">Volume de Titulado na Matraz: </label></td>
+                        <td><input type="range" name="ConcTitulado" id="ConcTitulado" class="slider" min="10" max="50" value="20"></td>
+                        <td><span id="ConcTituladoValue">0.20</span>mol/l</td>
+                    </tr>
+                    <tr><td><br></td></tr>
+                    <tr>
                         <td class="slider-label"><label for="VolTitulante">Volume de Titulante Adicionado de cada vez: </label></td>
-                        <td><input type="range" name="VolTitulante" id="VolTitulante" class="slider" min="1" max="10" value="1"></td>
+                        <td><input type="range" name="VolTitulante" id="VolTitulante" class="slider" min="10" max="20" value="1"></td>
                         <td><span id="VolTitulanteValue">0.1</span>ml</td>
                     </tr>
                     <tr>
                         <td class="slider-label"><label for="VolTitulado">Volume de Titulado na Matraz: </label></td>
-                        <td><input type="range" name="VolAdi" id="VolAdi" class="slider" min="25" max="75" value="50"></td>
-                        <td><span id="VolAdiValue">50</span>ml</td>
+                        <td><input type="range" name="VolTitulado" id="VolTitulado" class="slider" min="25" max="75" value="50"></td>
+                        <td><span id="VolTituladoValue">50.00</span>ml</td>
                     </tr>
                 </table>
             </div>
@@ -47,5 +59,6 @@
     </footer>
 
     <script src="curva.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 </body>
 </html>

@@ -4,8 +4,9 @@ body {
 }
 
 header {
+    font: bold 30pt Liberation;
     text-align: center;
-    padding-top: 5px;
+    padding-top: 20px;
 }
 
 main {
