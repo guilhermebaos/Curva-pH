@@ -74,10 +74,10 @@ function pontos() {
     let CHO = 0
     
     let volumeTitulante = 0
-    let volumeTitulado = VolTitulado.value * 1
+    let volumeTitulado = (VolTitulado.value * 1)  * 10e-3
 
-    let volumeAdicional = VolTitulante.value / 100
-    let volumeTotal = VolTitulado.value * 1
+    let volumeAdicional = (VolTitulante.value / 100) * 10e-3
+    let volumeTotal = (VolTitulado.value * 1) * 10e-3
 
     let pH = 0
 
@@ -119,7 +119,7 @@ function pontos() {
             pH = 7
         }
 
-        xVolumes.push(volumeTitulante.toFixed(2))
+        xVolumes.push((volumeTitulante * 100).toFixed(2))
         ypH.push(pH.toFixed(2))
 
         if (pH < 2 && volumeTitulante >= volumeTitulado) {
