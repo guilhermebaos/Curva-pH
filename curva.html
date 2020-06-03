@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curva de pH</title>
+
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <main>
+        <head>
+            Curva de pH
+        </head>
+        <section>
+            <div>
+
+            </div>
+            <div>
+
+            </div>
+        </section><br>
+
+        <section>
+            <div>
+                <table class="centered">
+                    <tr>
+                        <td class="slider-label"><label for="VolTitulante">Volume de Titulante Adicionado de cada vez: </label></td>
+                        <td><input type="range" name="VolTitulante" id="VolTitulante" class="slider" min="1" max="10" value="1"></td>
+                        <td><span id="VolTitulanteValue">0.1</span>ml</td>
+                    </tr>
+                    <tr>
+                        <td class="slider-label"><label for="VolTitulado">Volume de Titulado na Matraz: </label></td>
+                        <td><input type="range" name="VolAdi" id="VolAdi" class="slider" min="25" max="75" value="50"></td>
+                        <td><span id="VolAdiValue">50</span>ml</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="curva-pH" class="graf"></div>
+            <div>
+
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+
+    <script src="curva.js"></script>
+</body>
+</html>

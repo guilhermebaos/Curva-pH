@@ -22,6 +22,10 @@ div {
     text-align: center;
     padding: 5px;
 }
+div.graf {
+    margin: auto;
+    max-width: 100vh;
+}
 
 
 table {
