@@ -60,7 +60,10 @@ VolTitulado.oninput = function atualizarVolTitulado() {
 }
 
 
+// Obter os Valores de pH para os vários Volumes adicionados de Titulante
 function pontos() {
+
+    // Inicializar variáveis
     let nTitulante = 0
     let nTitulado = 0
 
@@ -84,7 +87,10 @@ function pontos() {
     let xVolumes = []
     let ypH = []
 
+    // Loop que calcula os pH
     while (true) {
+
+        // Reiniciar os n's
         nH3O = 0
         nHO = 0
 
@@ -104,12 +110,14 @@ function pontos() {
         CH3O = nH3O / volumeTotal
         CHO = nHO / volumeTotal
 
+        // Se as Concentrações do ião que existe em maior quantidade for muito pequena, a autoionização da água deixa de ser desprezável
         if (CH3O < Math.sqrt(Kw) && CH3O > 0) {
             CH3O = Math.sqrt(Kw)
         } else if (CHO < Math.sqrt(Kw) && CHO > 0) {
             CHO = Math.sqrt(Kw)
         }
 
+        // Calcular o pH através do ião que existe em maior quantidade
         if (CH3O != 0) {
             pH = -Math.log10(CH3O)
         } else if (CHO != 0) {
@@ -119,10 +127,12 @@ function pontos() {
             pH = 7
         }
 
+        // Guardar os Valores
         xVolumes.push((volumeTitulante * 100).toFixed(2))
         ypH.push(pH.toFixed(2))
 
-        if (pH < 2 && volumeTitulante >= volumeTitulado) {
+        // Paramos quando o pH for menor que dois
+        if ((pH < 2 && volumeTitulante >= volumeTitulado) || (volumeTitulante >= 5 * volumeTitulado)) {
             break
         } else {
             volumeTotal += volumeAdicional
